@@ -149,6 +149,11 @@
     overflow: hidden;
     padding: 0;
     margin: 0;
+    transition: ease-in-out 1s max-height;
+}
+
+#campus-post-list .actualites li:hover .vignette_deco, #school-post-list .actualites li:hover .vignette_deco {
+    max-height: unset;
 }
 
 #campus-post-list .actualites li .vignette_deco img, #school-post-list .actualites li .vignette_deco img {
@@ -165,4 +170,5 @@
 #campus-post-list .actualiteCard__lien, #school-post-list .actualiteCard__lien {
     background-color: transparent;
     border: none;
+    position: relative
 }
