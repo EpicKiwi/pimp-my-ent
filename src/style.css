@@ -106,11 +106,17 @@
     justify-content: left;
 }
 
+
+@media screen and (min-width: 85em) {
+    #tweets-list .social-twitter__tweet {
+        width: 33.33333333333%;
+    }
+}
+
 #tweets-list .social-twitter__tweet {
     margin: 0;
     border: none;
     padding: 10px;
-    width: 33.33333333333%;
     box-sizing: border-box;
 }
 
