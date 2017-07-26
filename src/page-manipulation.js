@@ -11,4 +11,14 @@
   appList.prependTo(appList.parent())
   appList.removeClass();
   
-})(jQuery)
+  var activityList = $("#activity-list")
+  var broadcastsActivity = activityList.find(".notification li .vignette_deco .icon-chat").parent().parent()
+  broadcastsActivity.each(function(el){
+    var $this = $(el)
+    var $title = $this.find(".titre")
+    var title = $title.text()
+    $title.text("Annonce")
+    $this.find(".vignette_deco2").append("<div class="resume"><strong>"+title+"</strong></div>");
+  });
+  
+})(jQuery);
