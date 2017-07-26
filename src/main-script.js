@@ -2,9 +2,9 @@
 (function($){
   
   //URL de la feuille de style CSS
-  var cssurl = "https://gist.githubusercontent.com/EpicKiwi/05fd06032d0a66a61b7fe85980412038/raw/a722e65eae684d8d40b3617c128d25661aad37c1/newstyle.css";
+  var cssurl = "https://raw.githubusercontent.com/EpicKiwi/pimp-my-ent/master/src/style.css";
   //USR du script javascript
-  var jsurl = "https://gist.githubusercontent.com/EpicKiwi/05fd06032d0a66a61b7fe85980412038/raw/a722e65eae684d8d40b3617c128d25661aad37c1/newstyle.css";
+  var jsurl = "https://raw.githubusercontent.com/EpicKiwi/pimp-my-ent/master/src/page-manipulation.js";
   
   //Chargement asynchrone du JS
   $.ajax({
