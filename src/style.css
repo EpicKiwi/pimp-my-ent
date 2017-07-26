@@ -120,7 +120,7 @@
     }
 }
 
-#campus-post-list .accueil__carte__info {
+#campus-post-list .accueil__carte__info, #school-post-list .accueil__carte__info {
     background: transparent;
     box-shadow: none;
     padding: 0;
@@ -128,11 +128,13 @@
     height: auto;
 }
 
-#campus-post-list .actualites {
+#campus-post-list .actualites, #school-post-list .actualites {
     overflow: visible;
+    max-height: unset;
 }
 
-#campus-post-list .actualites li {
+
+#campus-post-list .actualites li, #school-post-list .actualites li {
     border: none;
     margin-bottom: 20px;
     background-color: white;
@@ -140,7 +142,7 @@
     padding: 0;
 }
 
-#campus-post-list .actualites li .vignette_deco {
+#campus-post-list .actualites li .vignette_deco, #school-post-list .actualites li .vignette_deco {
     float: none;
     width: 100%;
     max-height: 200px;
@@ -149,16 +151,18 @@
     margin: 0;
 }
 
-#campus-post-list .actualites li .vignette_deco img {
+#campus-post-list .actualites li .vignette_deco img, #school-post-list .actualites li .vignette_deco img {
     width: 100%;
     max-width: unset;
     margin: 0;
     padding: 0;
 }
 
-#campus-post-list .actualites li .vignette_deco2 {
+#campus-post-list .actualites li .vignette_deco2, #school-post-list .actualites li .vignette_deco2 {
     padding: 20px;
 }
 
-
-
+#campus-post-list .actualiteCard__lien, #school-post-list .actualiteCard__lien {
+    background-color: transparent;
+    border: none;
+}
