@@ -14,7 +14,7 @@
   var activityList = $("#activity-list")
   activityList.find(".notification li").on("click",function(e){
     var $this = $(this);
-    if($this.prop("tagName") == "A"){
+    if($this.prop("tagName").is("a"){
       return;
     }
     $(this).find("a").click();
