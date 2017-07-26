@@ -8,7 +8,7 @@
   
   var appList = $("app-list")
   
-  appList.premendTo(appList.parent())
+  appList.prependTo(appList.parent())
   appList.removeClass();
   
 })(jQuery)
