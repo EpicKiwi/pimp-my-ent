@@ -6,7 +6,7 @@
   $(".layout__slot:nth-child(4)").attr("id","tweets-list");
   $(".layout__slot:nth-child(4)").attr("id","tweets-list");
   
-  var appList = $("app-list")
+  var appList = $("#app-list")
   
   appList.prependTo(appList.parent())
   appList.removeClass();
