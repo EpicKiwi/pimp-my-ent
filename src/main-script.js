@@ -12,6 +12,7 @@
     cache: false
   }).done(function(data){
     $("body").append("<script>\n"+data+"\n</script>")
+    console.info("Custom JS loaded")
   }).fail(function(){
     console.error("Unable to load custom JS",jsurl)
   })
