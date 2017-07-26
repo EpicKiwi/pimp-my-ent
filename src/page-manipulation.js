@@ -12,8 +12,8 @@
   appList.removeClass();
  
   var tweetsList = $("#tweets-list")
-  appList.appendTo(appList.parent())
-  appList.removeClass();
+  tweetsList.appendTo(tweetsList.parent())
+  tweetsList.removeClass();
   
   var activityList = $("#activity-list");
   var broadcastsActivity = activityList.find(".notification li .vignette_deco .icon-chat").parent().parent();
