@@ -13,7 +13,7 @@
   
   var activityList = $("#activity-list")
   activityList.find(".notification li").on("click",function(e){
-    $(this).find("a").click();
+    $(this).find(".vignette_deco2 .resume strong a").click();
   });
   
 })(jQuery)
