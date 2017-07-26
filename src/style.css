@@ -1,1 +1,31 @@
+#app-list {
+    width: 100%;
+}
 
+#app-list .accueil__carte__titre {
+    display: none;
+}
+
+#app-list .accueil__carte__info {
+    min-height: 0px;
+    height: auto;
+}
+
+#app-list .lienaccesdirect {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    overflow: visible;
+}
+
+#app-list .lienaccesdirect > li {
+    width: 150px;
+    height: 150px;
+}
+
+#app-list .lien_externe {
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+}
