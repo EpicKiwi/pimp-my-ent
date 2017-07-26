@@ -13,7 +13,11 @@
   
   var activityList = $("#activity-list")
   activityList.find(".notification li").on("click",function(e){
-    $(this).find(".vignette_deco2 .resume strong a").click();
+    var $this = $(this);
+    if($this.prop("tagName") == "A"){
+      return;
+    }
+    $(this).find("a").click();
   });
   
 })(jQuery)
