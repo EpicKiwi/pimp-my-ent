@@ -30,8 +30,9 @@
   activities.on("click",function(e){
     if($(e.target).is("a"))
       return;
-    console.log(e)
-    window.location = $(this).find("strong a").attr('href');
+    var link = $(this).find("strong a").attr('href');
+    if(link)
+     window.location = link;
   })
   
   var oldActivityBox = activityList.find(".card__lien");
