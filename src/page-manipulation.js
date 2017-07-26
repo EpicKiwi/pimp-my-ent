@@ -19,7 +19,7 @@
       var title = $title.text();
       $title.text("Annonce");
       $this.find(".vignette_deco2").prepend("<div class=\"resume\"><strong><a hre=\"#\">"+title+"</a></strong></div>");
-      $this.find(".vignette_deco2 .auteur").text("Administrateur")
+      $this.find(".vignette_deco2 .auteur").text("Annonce d'administration")
   });
   
 })(jQuery);
