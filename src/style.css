@@ -65,7 +65,6 @@
 
 #activity-list .card__lien {
     position: relative;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     border: none;
     background: transparent;
 }
