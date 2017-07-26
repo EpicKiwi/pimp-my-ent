@@ -86,3 +86,9 @@
     box-sizing: border-box;
     margin-bottom: 100px;
 }
+
+@media screen and (min-width: 85em) {
+    #calendar-list .accueil__carte__info {
+        margin-bottom: 100px;
+    }
+}
