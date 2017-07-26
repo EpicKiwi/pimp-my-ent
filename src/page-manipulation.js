@@ -8,8 +8,11 @@
   $(".layout__slot:nth-child(6)").attr("id","school-post-list");
   
   var appList = $("#app-list")
-  
   appList.prependTo(appList.parent())
+  appList.removeClass();
+ 
+  var tweetsList = $("#tweets-list")
+  appList.appendTo(appList.parent())
   appList.removeClass();
   
   var activityList = $("#activity-list");
