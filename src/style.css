@@ -119,3 +119,22 @@
         width: 48%;
     }
 }
+
+#campus-post-list .accueil__carte__info {
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    overflow: visible;
+    height: auto;
+}
+
+#campus-post-list .actualites {
+    overflow: visible;
+}
+
+#campus-post-list .actualites li {
+    border: none;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
