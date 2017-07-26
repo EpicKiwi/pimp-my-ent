@@ -153,7 +153,7 @@
 }
 
 #campus-post-list .actualites li:hover .vignette_deco, #school-post-list .actualites li:hover .vignette_deco {
-    max-height: unset;
+    max-height: 2000px;
 }
 
 #campus-post-list .actualites li .vignette_deco img, #school-post-list .actualites li .vignette_deco img {
