@@ -137,4 +137,28 @@
     margin-bottom: 20px;
     background-color: white;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    padding: 0;
 }
+
+#campus-post-list .actualites li .vignette_deco {
+    float: none;
+    width: 100%;
+    max-height: 200px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+#campus-post-list .actualites li .vignette_deco img {
+    width: 100%;
+    max-width: unset;
+    margin: 0;
+    padding: 0;
+}
+
+#campus-post-list .actualites li .vignette_deco2 {
+    padding: 20px;
+}
+
+
+
