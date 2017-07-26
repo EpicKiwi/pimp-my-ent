@@ -1,3 +1,7 @@
+.chidden {
+    display:none !important;
+}
+
 #app-list {
     width: 100%;
 }
