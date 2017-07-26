@@ -26,4 +26,31 @@
       $this.find(".vignette_deco2 .auteur").text("Annonce d'administration")
   });
   
+  var oldActivityBox = activityList.find(".card__lien");
+  oldActivityBox.attr("id","activity-list-full-btn");
+  activityList.find(".carte-activite").append("<div class=\"card__lien\" id=\"activity-list-expand-btn\"><a href=\"#\">Tout afficher</a></div>");
+
+  $("#activity-list-expand-btn").on("click",function(e){
+    e.preventDefault();
+    activityList.toggleClass("fullList");
+    setActivities();
+  })
+
+  setActivities();
+
+  function setActivities(){
+    var activities = activityList.find(".notification li");
+    activities.removeClass("chidden");
+    if(!activityList.hasClass("fullList")){
+      for(var i = 7; i<activities.length; i++){
+        $(activities.get(i)).addClass("chidden");
+      }
+      $("#activity-list-full-btn").addClass("chidden");
+      $("#activity-list-expand-btn a").text("Tout afficher");
+    } else {
+      $("#activity-list-full-btn").removeClass("chidden");
+      $("#activity-list-expand-btn a").text("Cacher");
+    }
+  }
+  
 })(jQuery);
