@@ -11,13 +11,4 @@
   appList.prependTo(appList.parent())
   appList.removeClass();
   
-  var activityList = $("#activity-list")
-  activityList.find(".notification li").on("click",function(e){
-    var $this = $(this);
-    if($this.is("a")){
-      return;
-    }
-    $(this).find("a").click();
-  });
-  
 })(jQuery)
