@@ -29,3 +29,49 @@
     height: 150px;
     box-sizing: border-box;
 }
+
+#activity-list {
+    margin-top: 50px;
+    background-color: transparent;
+}
+
+
+#activity-list .accueil__carte__titre {
+    display: none;
+}
+
+#activity-list .accueil__carte__titre {
+    display: none;
+}
+
+#activity-list .accueil__carte__info {
+    height: auto;
+    box-shadow: none;
+    background: transparent;
+    overflow: visible;
+}
+
+#activity-list .notification {
+    max-height: unset;
+    overflow: visible;
+    cursor: pointer;
+}
+
+#activity-list .notification li {
+    margin-bottom: 10px;
+    border: none;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+#activity-list .card__lien {
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border: none;
+    background: transparent;
+}
+
+@media screen and (min-width: 85em) {
+    #activity-list {
+        width: 64%;
+    }
+}
