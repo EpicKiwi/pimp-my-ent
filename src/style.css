@@ -91,3 +91,25 @@
         margin-bottom: 100px;
     }
 }
+
+#tweets-list .accueil__carte__info {
+    background: transparent;
+    box-shadow: none;
+    height: auto;
+    padding: 0;
+}
+
+#tweets-list .social-twitter__list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+#tweets-list .social-twitter__tweet {
+    margin: 0;
+    border: none;
+    padding: 10px;
+    width: 33.33333333333%;
+    box-sizing: border-box;
+}
