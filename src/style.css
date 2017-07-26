@@ -113,3 +113,9 @@
     width: 33.33333333333%;
     box-sizing: border-box;
 }
+
+@media screen and (min-width: 85em) {
+    #campus-post-list, #school-post-list {
+        width: 48%;
+    }
+}
