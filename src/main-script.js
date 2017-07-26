@@ -1,5 +1,5 @@
 //JQuery est déjà chargé sur la page
-(function($){
+(function($){$(function(){
   
   //URL de la feuille de style CSS
   var cssurl = "https://raw.githubusercontent.com/EpicKiwi/pimp-my-ent/master/src/style.css";
@@ -8,8 +8,7 @@
   
   //Chargement asynchrone du JS
   $.ajax({
-    url: jsurl,
-    cache: false
+    url: jsurl
   }).done(function(data){
     $("body").append("<script>\n"+data+"\n</script>")
     console.info("Custom JS loaded")
@@ -18,8 +17,7 @@
   })
   //Chargement asynchrone du CSS
   $.ajax({
-    url: cssurl,
-    cache: false
+    url: cssurl
   }).done(function(data){
     $("head").append("<style>\n"+data+"\n</style>")
     console.info("Custom CSS loaded")
@@ -27,4 +25,4 @@
     console.error("Unable to load custom CSS",cssurl)
   })
   
-})(jQuery)
+})})(jQuery)
