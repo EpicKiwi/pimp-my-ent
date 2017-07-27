@@ -1,5 +1,8 @@
 (function($){
 
+  //Storages
+  var pinnedActivities = []
+  
   //Utils functions
   function setActivities(){
     var activities = activityList.find(".notification li");
@@ -14,6 +17,9 @@
       $("#activity-list-full-btn").removeClass("chidden");
       $("#activity-list-expand-btn a").text("Cacher");
     }
+  }
+  
+  function setPinnedActivities(){
   }
   
   String.prototype.hashCode = function() {
@@ -64,12 +70,24 @@
   function onClickPinActivity(e){
     e.preventDefault();
     var activity = $(this).parent();
-    if(activity.hasClass("pinned")){
+    var pinned = pinnedActivities.find(function(el){return el.hash == activity.attr("data-hash")})
+    if(pinned){
       activity.removeClass("pinned");
+      if(pinned.before){
+        activity.insertBefore($("#activity-"+pinned.before));
+      } else {
+        activity.appendTo(activity.parent());
+      }
+      pinnedActivities.splice(pinnedActivities.indexOf(pinned),1)
     } else {
+      pinnedActivities.unshift({
+        hash: activity.attr("data-hash"),
+        before: activity.next().attr("data-hash")
+      });
       activity.addClass("pinned");
       activity.prependTo(activity.parent());
     }
+    console.log(pinnedActivities);
   }
   
   function onClickExpandActivity(e){
