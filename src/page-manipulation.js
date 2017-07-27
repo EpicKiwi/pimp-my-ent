@@ -19,7 +19,18 @@
     }
   }
   
-  function setPinnedActivities(){
+  function savePinnedActivities(){
+    localStorage.setItem('pinned-activities', JSON.stringify(pinnedActivities));
+  }
+  
+  function loadPinnedActivities(){
+    pinnedActivities = JSON.parse(localStorage.getItem('pinned-activities'))
+  }
+  
+  function pinActivity(pinnedObject){
+      var $activity = $("#activity-"+pinnedObject.hash);
+      $activity.addClass("pinned");
+      $activity.prependTo($activity.parent());
   }
   
   String.prototype.hashCode = function() {
@@ -80,12 +91,12 @@
       }
       pinnedActivities.splice(pinnedActivities.indexOf(pinned),1)
     } else {
-      pinnedActivities.unshift({
-        hash: activity.attr("data-hash"),
-        before: activity.next().attr("data-hash")
-      });
-      activity.addClass("pinned");
-      activity.prependTo(activity.parent());
+      pinned = {
+        hash: $activity.attr("data-hash"),
+        before: $activity.next().attr("data-hash")
+      }
+      pinnedActivities.unshift();
+      pinActivity(pinned);
     }
     console.log(pinnedActivities);
   }
