@@ -101,8 +101,8 @@
   
   var activities = activityList.find(".notification li");
   activities.on("click",onClickActivity)
-  activities.find(".activity-pin").on("click",onClickPinActivity)
   activities.each(onEachActivity)
+  activities.find(".activity-pin").on("click",onClickPinActivity)
   
   var oldActivityBox = activityList.find(".card__lien");
   oldActivityBox.attr("id","activity-list-full-btn");
