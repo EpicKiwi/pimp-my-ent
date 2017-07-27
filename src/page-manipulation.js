@@ -61,6 +61,17 @@
      window.location = link;
   }
   
+  function onClickPinActivity(e){
+    e.preventDefault();
+    var activity = $(this).parent();
+    if(activity.hasClass("pinned")){
+      activity.removeClass("pinned");
+    } else {
+      activity.addClass("pinned");
+      activity.prependTo(activity.parent());
+    }
+  }
+  
   function onClickExpandActivity(e){
     e.preventDefault();
     activityList.toggleClass("fullList");
@@ -90,6 +101,7 @@
   
   var activities = activityList.find(".notification li");
   activities.on("click",onClickActivity)
+  activities.find(".activity-pin").on("click",onClickPinActivity)
   activities.each(onEachActivity)
   
   var oldActivityBox = activityList.find(".card__lien");
