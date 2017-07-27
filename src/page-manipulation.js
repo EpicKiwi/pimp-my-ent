@@ -140,8 +140,9 @@
   $("#activity-list-expand-btn").on("click",onClickExpandActivity)
   setActivities();
   
+  loadPinnedActivities();
   pinnedActivities.forEach(function(el){
     pinActivity(el);
-  })
+  });
   
 })(jQuery);
