@@ -90,6 +90,10 @@
     opacity: 0.5;
 }
 
+#activity-list .notification li:not(.pinned) .activity-pin:hover {
+    opacity: 1;
+}
+
 #activity-list .notification li .activity-pin i {
     transform-origin: 50% 50%;
     transform: rotate(45deg);
