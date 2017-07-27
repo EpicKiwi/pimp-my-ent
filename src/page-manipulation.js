@@ -38,7 +38,9 @@
   
   function onEachActivity(){
     var $this = $(this);
-    $this.attr("id","activity-"+getActivityHash($this));
+    var hash = getActivityHash($this);
+    $this.attr("id","activity-"+hash);
+    $this.data("hash",hash);
   }
   
   function initOnEachActivityBroadcast(el){
