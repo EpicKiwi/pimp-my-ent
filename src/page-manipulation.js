@@ -54,7 +54,7 @@
   }
   
   function onClickActivity(e){
-    if($(e.target).is("a"))
+    if($(e.target).is("a") || $(e.target).is("a *"))
       return;
     var link = $(this).find("strong a").attr('href');
     if(link)
