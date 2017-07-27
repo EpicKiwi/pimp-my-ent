@@ -41,6 +41,7 @@
     var hash = getActivityHash($this);
     $this.attr("id","activity-"+hash);
     $this.attr("data-hash",hash);
+    $this.prepend('<a href="#" class="activity-pin"><i class="fa fa-thumb-tack"></i></a>')
   }
   
   function initOnEachActivityBroadcast(el){
