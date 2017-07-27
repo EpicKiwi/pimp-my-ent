@@ -20,11 +20,11 @@
   }
   
   function savePinnedActivities(){
-    localStorage.setItem('pinned-activities', JSON.stringify(pinnedActivities));
+    window.localStorage.setItem('pinned-activities', JSON.stringify(pinnedActivities));
   }
   
   function loadPinnedActivities(){
-    pinnedActivities = JSON.parse(localStorage.getItem('pinned-activities'))
+    pinnedActivities = JSON.parse(window.localStorage.getItem('pinned-activities'))
   }
   
   function pinActivity(pinnedObject){
@@ -92,13 +92,13 @@
       pinnedActivities.splice(pinnedActivities.indexOf(pinned),1)
     } else {
       pinned = {
-        hash: $activity.attr("data-hash"),
-        before: $activity.next().attr("data-hash")
+        hash: activity.attr("data-hash"),
+        before: activity.next().attr("data-hash")
       }
-      pinnedActivities.unshift();
+      pinnedActivities.push(pinned);
       pinActivity(pinned);
     }
-    console.log(pinnedActivities);
+    savePinnedActivities()
   }
   
   function onClickExpandActivity(e){
@@ -138,7 +138,10 @@
   activityList.find(".carte-activite").append("<div class=\"card__lien\" id=\"activity-list-expand-btn\"><a href=\"#\">Tout afficher</a></div>");
 
   $("#activity-list-expand-btn").on("click",onClickExpandActivity)
-
   setActivities();
+  
+  pinnedActivities.forEach(function(el){
+    pinActivity(el);
+  })
   
 })(jQuery);
