@@ -82,8 +82,12 @@
     opacity: 0;
 }
 
-#activity-list .notification li.pinned .activity-pin, #activity-list .notification li:hover .activity-pin {
+#activity-list .notification li.pinned .activity-pin {
     opacity: 1;
+}
+
+#activity-list .notification li:not(.pinned):hover .activity-pin {
+    opacity: 0.5;
 }
 
 #activity-list .notification li .activity-pin i {
