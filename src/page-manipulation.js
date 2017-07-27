@@ -40,7 +40,7 @@
     var $this = $(this);
     var hash = getActivityHash($this);
     $this.attr("id","activity-"+hash);
-    $this.data("hash",hash);
+    $this.attr("data-hash",hash);
   }
   
   function initOnEachActivityBroadcast(el){
