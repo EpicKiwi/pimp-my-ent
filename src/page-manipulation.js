@@ -36,14 +36,18 @@
   
   //Events and iterators functions
   
-  function initOnEachActivity(el){
+  function onEachActivity(){
+    var $this = $(this);
+    $this.attr("id","activity-"+getActivityHash($this));
+  }
+  
+  function initOnEachActivityBroadcast(el){
       var $this = $(broadcastsActivity.get(el));
       var $title = $this.find(".titre");
       var title = $title.text();
       $title.text("Annonce");
       $this.find(".vignette_deco2").prepend("<div class=\"resume\"><strong><a hre=\"#\">"+title+"</a></strong></div>");
       $this.find(".vignette_deco2 .auteur").text("Annonce d'administration")
-      $this.attr("id","activity-"+getActivityHash($this));
   }
   
   function onClickActivity(e){
@@ -79,10 +83,11 @@
   
   var activityList = $("#activity-list");
   var broadcastsActivity = activityList.find(".notification li .vignette_deco .icon-chat").parent().parent();
-  broadcastsActivity.each(initOnEachActivity);
+  broadcastsActivity.each(initOnEachActivityBroadcast);
   
   var activities = activityList.find(".notification li");
   activities.on("click",onClickActivity)
+  activities.each(onEachActivity)
   
   var oldActivityBox = activityList.find(".card__lien");
   oldActivityBox.attr("id","activity-list-full-btn");
