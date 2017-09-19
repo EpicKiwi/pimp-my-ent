@@ -24,7 +24,10 @@
   }
   
   function loadPinnedActivities(){
-    pinnedActivities = JSON.parse(window.localStorage.getItem('pinned-activities'))
+    var rawActivities = window.localStorage.getItem('pinned-activities')
+    if(rawActivities){
+      pinnedActivities = JSON.parse(rawActivities)
+    }
   }
   
   function pinActivity(pinnedObject){
