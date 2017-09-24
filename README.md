@@ -5,7 +5,7 @@
 
 Depuis **Firefox Android** ou **Firefox Bureau**, installez le module depuis la [page Firefox Addons](https://addons.mozilla.org/fr/firefox/addon/pimp-my-ent/)
 
-Depuis **Google Chrome**, installez le module depuis la page du [Chrome Web Store](https://chrome.google.com/webstore/detail/pimp-my-ent)
+Depuis **Google Chrome**, installez le module depuis la page du [Chrome Web Store](https://chrome.google.com/webstore/detail/pimp-my-ent/akhomincfdmeholmdfbgckbgajgeebem)
 
 ## Fonctionnalités
 
