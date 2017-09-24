@@ -6,12 +6,6 @@
   "web_accessible_resources": [
     "assets/font-awesome/fontawesome-webfont.ttf"
   ],
-  "applications": {
-    "gecko": {
-      "id": "pimpmyent@epickiwi.fr",
-      "strict_min_version": "42.0"
-    }
-  },
   "permissions": [
     "storage"
   ],
@@ -19,7 +13,7 @@
     {
       "matches": ["*://ent.cesi.fr/","*://ent.cesi.fr/?*"],
       "js": ["assets/jquery.js","global.js","home/page-manipulation.js"],
-      "css": ["assets/font-awesome/font-awesome.firefox.css","home/style.css"]
+      "css": ["assets/font-awesome/font-awesome.chrome.css","home/style.css"]
     }
   ]
 }

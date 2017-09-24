@@ -18,19 +18,41 @@
       $("#activity-list-expand-btn a").text("Cacher");
     }
   }
+
+  function getStorage(){
+    var selectedStorage = null
+    if(typeof browser !== 'undefined'){
+      selectedStorage = browser.storage.sync
+      if(!selectedStorage)
+        selectedStorage = browser.storage.local
+    } else if(typeof chrome !== 'undefined'){
+      selectedStorage = chrome.storage.sync
+      if(!selectedStorage)
+        selectedStorage = chrome.storage.local
+    }
+    return selectedStorage
+  }
   
   function savePinnedActivities(){
-    var selectedStorage = browser.storage.sync
-    if(!selectedStorage)
-      selectedStorage = browser.storage.local
+    var selectedStorage = getStorage()
     selectedStorage.set({'pinned-activities':pinnedActivities});
   }
   
-  function loadPinnedActivities(){
-    var selectedStorage = browser.storage.sync
-    if(!selectedStorage)
-      selectedStorage = browser.storage.local
-    return selectedStorage.get('pinned-activities')
+  function loadPinnedActivities(callback){
+    var selectedStorage = getStorage()
+
+    var finishedCallback = function(data){
+      if(data["pinned-activities"]){
+          pinnedActivities = data["pinned-activities"];
+      }
+        return callback(pinnedActivities);
+    };
+    
+    if(typeof browser !== 'undefined'){
+      selectedStorage.get('pinned-activities').then(finishedCallback);
+    } else if(typeof chrome !== 'undefined'){
+        selectedStorage.get('pinned-activities',finishedCallback)
+    }
   }
   
   function pinActivity(pinnedObject){
@@ -146,10 +168,7 @@
   $("#activity-list-expand-btn").on("click",onClickExpandActivity)
   setActivities();
   
-  loadPinnedActivities().then(function(data){
-    if(data["pinned-activities"]){
-        pinnedActivities = data["pinned-activities"]
-    }
+  loadPinnedActivities(function(data){
     pinnedActivities.forEach(function(el){
       pinActivity(el);
     });
