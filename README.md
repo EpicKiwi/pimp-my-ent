@@ -1,9 +1,9 @@
 # pimp-my-ent
-> Un script permettant de pimper la page de l'ENT CESI pour une meilleur ergonomie
+> Un module permettant de pimper la page de l'ENT CESI pour une meilleur ergonomie
 
 ## Installation
 
-Depuis Firefox Android ou Firefox Bureau, installze l'éxtention depuis la [page Firefox Addons](https://addons.mozilla.org/fr/firefox/addon/pimp-my-ent/)
+Depuis Firefox Android ou Firefox Bureau, installez le module depuis la [page Firefox Addons](https://addons.mozilla.org/fr/firefox/addon/pimp-my-ent/)
 
 ## Fonctionnalités
 
