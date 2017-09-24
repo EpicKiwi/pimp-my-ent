@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Pimp my ENT",
+  "version": "1.1",
+  "description": "Applique un thème plus ergonomique à l'ENT CESI",
+  "applications": {
+    "gecko": {
+      "id": "pimpmyent@epickiwi.fr",
+      "strict_min_version": "42.0"
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://ent.cesi.fr/","*://ent.cesi.fr/?*"],
+      "js": ["jquery.js","global.js","home/page-manipulation.js"],
+      "css": ["home/style.css"]
+    }
+  ]
+}

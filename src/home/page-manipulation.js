@@ -20,14 +20,17 @@
   }
   
   function savePinnedActivities(){
-    window.localStorage.setItem('pinned-activities', JSON.stringify(pinnedActivities));
+    var selectedStorage = browser.storage.sync
+    if(!selectedStorage)
+      selectedStorage = browser.storage.local
+    selectedStorage.set({'pinned-activities':pinnedActivities});
   }
   
   function loadPinnedActivities(){
-    var rawActivities = window.localStorage.getItem('pinned-activities')
-    if(rawActivities){
-      pinnedActivities = JSON.parse(rawActivities)
-    }
+    var selectedStorage = browser.storage.sync
+    if(!selectedStorage)
+      selectedStorage = browser.storage.local
+    return selectedStorage.get('pinned-activities')
   }
   
   function pinActivity(pinnedObject){
@@ -143,9 +146,13 @@
   $("#activity-list-expand-btn").on("click",onClickExpandActivity)
   setActivities();
   
-  loadPinnedActivities();
-  pinnedActivities.forEach(function(el){
-    pinActivity(el);
+  loadPinnedActivities().then(function(data){
+    if(data["pinned-activities"]){
+        pinnedActivities = data["pinned-activities"]
+    }
+    pinnedActivities.forEach(function(el){
+      pinActivity(el);
+    });
   });
   
 })(jQuery);
