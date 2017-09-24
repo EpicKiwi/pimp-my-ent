@@ -3,12 +3,13 @@
 
 ## Installation
 
-Pour bénéficier des modifications commencez par installer une extention permettant d'éxécuter des scripts utilisateurs comme [Greasemonkey](https://addons.mozilla.org/fr/firefox/addon/greasemonkey/) sur firefox.
-
-Ajoutez un nouveau script sur la page principale de l'ENT.
-
-Copiez le contenu du script [main-script.js](src/main-script.js) dans ce script utilisateur
+Depuis Firefox Android ou Firefox Bureau, installze l'éxtention depuis la [page Firefox Addons](https://addons.mozilla.org/fr/firefox/addon/pimp-my-ent/)
 
 ## Fonctionnalités
 
-* Affiche les applications CESi en barre principale
+* Affiche les applications CESI en barre principale
+* Réorganise les Tweets et Articles pour mettre en avant ce qui est important
+* Élargis la zone de notifications
+* Retire le scroll de la zone de notifications
+* Permet l'épinglage de notifications
+* Cache les notification superflus
