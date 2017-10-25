@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Pimp my ENT",
-  "version": "1.2",
+  "version": "1.2.1",
   "description": "Applique un thème plus ergonomique à l'ENT CESI",
   "web_accessible_resources": [
     "assets/font-awesome/fontawesome-webfont.ttf"
