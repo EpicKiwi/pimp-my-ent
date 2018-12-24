@@ -1,0 +1,95 @@
+.login {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.login #error-email:not([hidden]),
+.login #error-no-matching:not([hidden]),
+.login #error-unexpected:not([hidden]) {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 0;
+  background-color: #bb0000;
+  color: white;
+  font-weight: bold;
+}
+
+.login #login {
+  flex: 1;
+  border-radius: 0;
+  border-width: 1px;
+  padding: 5px;
+}
+
+.login label {
+  display: none;
+}
+
+.login #submit {
+  border-radius: 0;
+  border-width: 1px;
+  padding: 5px;
+  box-shadow: none;
+}
+
+.autocomplete {
+  width: 100%;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: none;
+  background: #f9f9f9;
+}
+
+.autocomplete .save-form {
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.autocomplete #save-email {
+  margin-right: 10px;
+}
+
+.autocomplete .emails > * {
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.autocomplete .emails > *:hover {
+  background-color: #4d75bb;
+  color: white;
+}
+
+.autocomplete .emails > * .toolbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.autocomplete .emails > * .toolbar > * {
+  height: 47px;
+  width: 50px;
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}

@@ -3,17 +3,18 @@
   "name": "Pimp my ENT",
   "version": "1.2",
   "description": "Applique un thème plus ergonomique à l'ENT CESI",
-  "web_accessible_resources": [
-    "assets/font-awesome/fontawesome-webfont.ttf"
-  ],
-  "permissions": [
-    "storage"
-  ],
+  "web_accessible_resources": ["assets/font-awesome/fontawesome-webfont.ttf"],
+  "permissions": ["storage"],
   "content_scripts": [
     {
-      "matches": ["*://ent.cesi.fr/","*://ent.cesi.fr/?*"],
-      "js": ["assets/jquery.js","global.js","home/page-manipulation.js"],
-      "css": ["assets/font-awesome/font-awesome.chrome.css","home/style.css"]
+      "matches": ["*://wayf.cesi.fr/login?*"],
+      "js": ["lib/storage.js", "global.js", "login/login-autocomplete.js"],
+      "css": ["assets/font-awesome/font-awesome.firefox.css", "login/style.css"]
+    },
+    {
+      "matches": ["*://ent.cesi.fr/", "*://ent.cesi.fr/?*"],
+      "js": ["assets/jquery.js", "global.js", "home/page-manipulation.js"],
+      "css": ["assets/font-awesome/font-awesome.chrome.css", "home/style.css"]
     }
   ]
 }
