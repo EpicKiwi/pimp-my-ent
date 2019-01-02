@@ -1,6 +1,7 @@
 import * as apis from "./apis/index.js";
+import { getRuntime } from "./lib/runtime.js";
 
-browser.runtime.onConnect.addListener(connection => {
+getRuntime().onConnect.addListener(connection => {
   let ApiClass = Object.values(apis).find(el => el.apiName == connection.name);
   console.info("New connection", ApiClass.name);
   if (ApiClass) {

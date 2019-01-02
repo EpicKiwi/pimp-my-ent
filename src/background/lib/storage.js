@@ -9,3 +9,17 @@ export function getStorage() {
   }
   return selectedStorage;
 }
+
+export async function storageGet(storage, ...args) {
+  if (typeof chrome !== "undefined") {
+    return new Promise(resolve => storage.get(...[...args, resolve]));
+  }
+  return await storage.get(...args);
+}
+
+export async function storageSet(storage, ...args) {
+  if (typeof chrome !== "undefined") {
+    return new Promise(resolve => storage.set(...[...args, resolve]));
+  }
+  return await storage.set(...args);
+}

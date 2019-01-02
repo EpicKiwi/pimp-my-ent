@@ -24,7 +24,7 @@ function onMessage(message) {
 
 async function loadEmails() {
   if (!backgroundConnection) {
-    backgroundConnection = browser.runtime.connect({ name: "login-emails" });
+    backgroundConnection = getRuntime().connect({ name: "login-emails" });
     backgroundConnection.onMessage.addListener(m => onMessage(m));
   }
   backgroundConnection.postMessage({ type: "get-emails" });

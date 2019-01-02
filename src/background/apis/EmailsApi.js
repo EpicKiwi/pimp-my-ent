@@ -1,5 +1,5 @@
 import { Api } from "./Api.js";
-import { getStorage } from "../lib/storage.js";
+import { getStorage, storageGet, storageSet } from "../lib/storage.js";
 
 export class EmailsApi extends Api {
   static get apiName() {
@@ -12,27 +12,27 @@ export class EmailsApi extends Api {
   }
 
   async sendEmails() {
-    let content = await this.storage.get();
+    let content = await storageGet(this.storage);
     let emails = content.savedEmails ? content.savedEmails : [];
     this.conn.postMessage({ type: "email-list", emails });
   }
 
   async addEmail(email) {
-    let content = await this.storage.get();
+    let content = await storageGet(this.storage);
     let emails = content.savedEmails ? content.savedEmails : [];
 
     if (email && emails.indexOf(email) == -1) {
-      await this.storage.set({ savedEmails: [email, ...emails] });
+      await storageSet(this.storage, { savedEmails: [email, ...emails] });
       console.log("Pushed email", email);
     }
   }
 
   async removeEmail(email) {
-    let content = await this.storage.get();
+    let content = await storageGet(this.storage);
     let emails = content.savedEmails ? content.savedEmails : [];
 
     let newEmails = emails.filter(el => el !== email);
-    await this.storage.set({ savedEmails: newEmails });
+    await storageSet(this.storage, { savedEmails: newEmails });
     console.log("removed email", email);
   }
 
