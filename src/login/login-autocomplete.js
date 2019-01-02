@@ -2,11 +2,12 @@ let autocompleteTemplate = `
 <div class="emails" id="emails"></div>
 <div class="save-form">
     <input type="checkbox" id="save-email" checked />
-    <label for="save-email">Sauvegarder votre email</label>
+    <label for="save-email">Sauvegarder mon email</label>
 </div>
 `;
 
 let autoEmails = [];
+let backgroundConnection = null;
 
 let completeContainer = null;
 let emailsContainer = null;
@@ -14,11 +15,19 @@ let loginInput = null;
 let submitButton = null;
 let saveCheckbox = null;
 
+function onMessage(message) {
+  if (message.type == "email-list") {
+    autoEmails = message.emails;
+    addEmails();
+  }
+}
+
 async function loadEmails() {
-  var selectedStorage = getStorage();
-  let savedEmails = await selectedStorage.get("saved-emails");
-  autoEmails = savedEmails["saved-emails"];
-  addEmails();
+  if (!backgroundConnection) {
+    backgroundConnection = browser.runtime.connect({ name: "login-emails" });
+    backgroundConnection.onMessage.addListener(m => onMessage(m));
+  }
+  backgroundConnection.postMessage({ type: "get-emails" });
 }
 
 function addWidgetBackbone() {
@@ -30,7 +39,7 @@ function addWidgetBackbone() {
   emailsContainer = completeContainer.querySelector("#emails");
   loginInput = document.getElementById("login");
   submitButton = document.getElementById("submit");
-  submitButton.addEventListener("click", () => saveEmail());
+  window.addEventListener("beforeunload", () => saveEmail());
   saveCheckbox = completeContainer.querySelector("#save-email");
 }
 
@@ -64,17 +73,14 @@ function selectEmail(email) {
 
 function removeEmail(email) {
   autoEmails = autoEmails.filter(el => el !== email);
-  var selectedStorage = getStorage();
-  selectedStorage.set({ "saved-emails": autoEmails });
+  backgroundConnection.postMessage({ type: "remove-email", email });
   addEmails();
 }
 
 async function saveEmail() {
   let email = loginInput.value;
-  if (email && saveCheckbox.checked && autoEmails.indexOf(email) == -1) {
-    autoEmails.unshift(email);
-    var selectedStorage = getStorage();
-    let saved = await selectedStorage.set({ "saved-emails": autoEmails });
+  if (email && saveCheckbox.checked) {
+    backgroundConnection.postMessage({ type: "add-email", email });
   }
 }
 

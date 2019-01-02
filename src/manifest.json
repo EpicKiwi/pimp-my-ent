@@ -11,6 +11,9 @@
     }
   },
   "permissions": ["storage"],
+  "background": {
+    "page": "background/bg-page.html"
+  },
   "content_scripts": [
     {
       "matches": ["*://wayf.cesi.fr/login?*"],
