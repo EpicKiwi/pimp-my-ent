@@ -3,15 +3,14 @@
   "name": "Pimp my ENT",
   "version": "1.3.3",
   "description": "Applique un thème plus ergonomique à l'ENT CESI",
-  "web_accessible_resources": [
-    "assets/font-awesome/fontawesome-webfont.ttf",
-    "assets/font-awesome/fontawesome-webfont.eot",
-    "assets/font-awesome/fontawesome-webfont.svg",
-    "assets/font-awesome/fontawesome-webfont.woff",
-    "assets/font-awesome/fontawesome-webfont.woff2",
-    "assets/font-awesome/fontawesome-webfont.otf"
-  ],
-  "permissions": ["storage"],
+  "web_accessible_resources": ["assets/font-awesome/fontawesome-webfont.ttf"],
+  "applications": {
+    "gecko": {
+      "id": "pimpmyent@epickiwi.fr",
+      "strict_min_version": "48.0"
+    }
+  },
+  "permissions": ["storage", "*://feedback.ms.epickiwi.fr/*"],
   "background": {
     "page": "background/bg-page.html"
   },
@@ -24,12 +23,21 @@
         "global.js",
         "login/login-autocomplete.js"
       ],
-      "css": ["assets/font-awesome/font-awesome.chrome.css", "login/style.css"]
+      "css": ["assets/font-awesome/font-awesome.firefox.css", "login/style.css"]
     },
     {
       "matches": ["*://ent.cesi.fr/", "*://ent.cesi.fr/?*"],
-      "js": ["assets/jquery.js", "global.js", "home/page-manipulation.js"],
-      "css": ["assets/font-awesome/font-awesome.chrome.css", "home/style.css"]
+      "js": [
+        "assets/jquery.js",
+        "global.js",
+        "home/page-manipulation.js",
+        "feedback/FeedbackButton.js"
+      ],
+      "css": [
+        "assets/font-awesome/font-awesome.firefox.css",
+        "home/style.css",
+        "feedback/feedback.css"
+      ]
     }
   ]
 }

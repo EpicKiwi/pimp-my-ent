@@ -1,0 +1,110 @@
+.bottom-toolbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.bottom-toolbar-item {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+.bottom-toolbar-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.feedback-modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.feedback-modal.hidden {
+  display: none;
+}
+
+.feedback-modal-surface {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  background: white;
+}
+
+.feedback-modal-surface .content.hidden {
+  opacity: 0;
+}
+
+.feedback-modal-surface .success {
+  box-sizing: border-box;
+  position: absolute;
+  top: 68px;
+  left: 15px;
+  height: calc(100% - 83px);
+  width: calc(100% - 30px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.feedback-modal-surface .success.hidden {
+  display: none;
+}
+
+.feedback-modal-surface form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-modal-surface form textarea {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+  resize: none;
+}
+
+.feedback-modal-surface form button {
+  background: #4d75bb;
+  color: white;
+}
+
+.feedback-modal-surface form button:disabled {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+.feedback-modal .toolbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.feedback-modal .toolbar > * {
+  width: 30px;
+  height: 30px;
+  background: transparent;
+}
