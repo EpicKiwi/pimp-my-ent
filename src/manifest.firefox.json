@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Pimp my ENT",
-  "version": "1.5",
+  "version": "${VERSION}",
   "description": "Applique un thème plus ergonomique à l'ENT CESI",
   "web_accessible_resources": ["assets/font-awesome/fontawesome-webfont.ttf"],
   "applications": {
@@ -37,18 +37,6 @@
         "assets/font-awesome/font-awesome.firefox.css",
         "home/style.css",
         "feedback/feedback.css"
-      ]
-    },
-    {
-      "matches": ["*://moodle-exia.cesi.fr/course/view.php*"],
-      "js": [
-        "lib/runtime.js",
-        "lib/storage.js",
-        "global.js",
-        "moodle/noPopup.js"
-      ],
-      "css": [
-        "moodle/noPopupStyle.css"
       ]
     }
   ]

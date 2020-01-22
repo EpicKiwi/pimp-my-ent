@@ -79,7 +79,7 @@ function submitFeedback() {
   if (feedback == "") return;
   modal.querySelector("form button").disabled = true;
 
-  fetch("http://feedback.ms.epickiwi.fr/", {
+  fetch("https://feedback.ms.epickiwi.fr/", {
     method: "post",
     headers: {
       "Content-Type": "application/json",

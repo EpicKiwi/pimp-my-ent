@@ -1,2 +1,5 @@
 web-ext-artifacts
 .idea
+.env
+artifacts
+src/manifest.json
