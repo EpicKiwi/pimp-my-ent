@@ -3,7 +3,7 @@
 
 ## Installation
 
-Depuis **Firefox Android** ou **Firefox Bureau**, installez le module depuis la [page Firefox Addons](https://addons.mozilla.org/fr/firefox/addon/pimp-my-ent/)
+Depuis **Firefox Android** ou **Firefox Bureau**, téléchargez le module depuis la [page de release](https://github.com/EpicKiwi/pimp-my-ent/releases/latest)
 
 Depuis **Google Chrome**, installez le module depuis la page du [Chrome Web Store](https://chrome.google.com/webstore/detail/pimp-my-ent/akhomincfdmeholmdfbgckbgajgeebem)
 
